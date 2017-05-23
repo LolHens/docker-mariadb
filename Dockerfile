@@ -7,4 +7,4 @@ RUN apt-get update \
       bindfs
 
 RUN echo "#!/usr/bin/with-contenv bash">/etc/cont-init.d/20-bind-config \
- && echo "bindfs -u99 -p0644 config2 config">>/etc/cont-init.d/20-bind-config
+ && echo "bindfs -u99 -g100 -pgod=rx,ud+w,gof=,uf+rw config2 config">>/etc/cont-init.d/20-bind-config
